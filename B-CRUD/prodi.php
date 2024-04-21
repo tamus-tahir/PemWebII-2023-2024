@@ -21,41 +21,30 @@ while ($data = mysqli_fetch_assoc($result)) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php include 'header.php' ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<h1>Halaman Prodi</h1>
 
-<body>
+<a href="tambah.php">Tambah</a>
 
-    <h1>Halaman Prodi</h1>
+<table border="1" cellpadding="10" cellspacing="0">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Prodi</th>
+        </tr>
+    </thead>
+    <tbody>
 
-    <a href="tambah.php">Tambah</a>
-
-    <table border="1" cellpadding="10" cellspacing="0">
-        <thead>
+        <?php $i = 1 ?>
+        <?php foreach ($prodi as $row) : ?>
             <tr>
-                <th>No</th>
-                <th>Prodi</th>
+                <td><?= $i++; ?></td>
+                <td><?= $row['prodi']; ?></td>
             </tr>
-        </thead>
-        <tbody>
+        <?php endforeach ?>
 
-            <?php $i = 1 ?>
-            <?php foreach ($prodi as $row) : ?>
-                <tr>
-                    <td><?= $i++; ?></td>
-                    <td><?= $row['prodi']; ?></td>
-                </tr>
-            <?php endforeach ?>
+    </tbody>
+</table>
 
-        </tbody>
-    </table>
-
-</body>
-
-</html>
+<?php include 'footer.php' ?>

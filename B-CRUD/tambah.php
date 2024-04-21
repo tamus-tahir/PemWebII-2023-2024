@@ -38,29 +38,16 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php include 'header.php' ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<h1>Halaman Tambah Prodi</h1>
 
-<body>
+<form action="" method="post">
 
-    <h1>Halaman Tambah Prodi</h1>
+    <input type="text" name="prodi" required placeholder="input prodi">
 
-    <form action="" method="post">
+    <button type="submit" name="submit">Submit</button>
 
-        <input type="text" name="prodi" required placeholder="input prodi">
+</form>
 
-        <button type="submit" name="submit">Submit</button>
-
-    </form>
-
-
-
-</body>
-
-</html>
+<?php include 'footer.php' ?>
