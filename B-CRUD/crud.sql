@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2024 at 03:57 AM
+-- Generation Time: Apr 25, 2024 at 07:34 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,6 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mahasiswa`
+--
+
+CREATE TABLE `mahasiswa` (
+  `id` int(11) NOT NULL,
+  `id_prodi` int(11) NOT NULL,
+  `nama` varchar(128) NOT NULL,
+  `nim` int(11) NOT NULL,
+  `gender` int(11) NOT NULL,
+  `deskripsi` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mahasiswa`
+--
+
+INSERT INTO `mahasiswa` (`id`, `id_prodi`, `nama`, `nim`, `gender`, `deskripsi`) VALUES
+(2, 3, 'Indah', 20220202, 0, 'kbdiwbdv oubwsuodvbwuov oubuosvd');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `prodi`
 --
 
@@ -37,13 +59,21 @@ CREATE TABLE `prodi` (
 --
 
 INSERT INTO `prodi` (`id`, `prodi`) VALUES
-(1, 'sistem'),
-(2, 'teknik'),
-(4, 'bisnis');
+(1, 'Sistem Informasi'),
+(2, 'Teknik Informatika'),
+(3, 'Bisnis Digital'),
+(4, 'Teknologi Informasi'),
+(5, 'Pendidikan Teknologi Informasi');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `mahasiswa`
+--
+ALTER TABLE `mahasiswa`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `prodi`
@@ -56,10 +86,16 @@ ALTER TABLE `prodi`
 --
 
 --
+-- AUTO_INCREMENT for table `mahasiswa`
+--
+ALTER TABLE `mahasiswa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `prodi`
 --
 ALTER TABLE `prodi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
