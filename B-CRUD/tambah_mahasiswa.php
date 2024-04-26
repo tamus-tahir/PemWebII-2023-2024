@@ -17,6 +17,7 @@ if (isset($_POST['submit'])) {
     $gender = $_POST['gender'];
     $deskripsi = $_POST['deskripsi'];
 
+    // sesuai urutan di database (id, id_prodi, nama, nim, gender, deskripsi)
     $query = "INSERT INTO mahasiswa VALUES ('', '$id_prodi', '$nama' , '$nim', '$gender', '$deskripsi')";
 
     mysqli_query($koneksi, $query);

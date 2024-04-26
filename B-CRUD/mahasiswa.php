@@ -3,6 +3,10 @@
 require 'koneksi.php';
 global $koneksi;
 
+/*
+    prodi.id => tabel prodi filed id
+    mahasiswa.id_prodi => tabel mahasiswa filed id_prodi
+*/
 $result = mysqli_query($koneksi, "SELECT * FROM mahasiswa JOIN prodi ON prodi.id = mahasiswa.id_prodi ORDER BY mahasiswa.id DESC");
 
 $mahasiswa = [];
