@@ -11,6 +11,7 @@ $id = $_GET['id'];
 
 // query menghapus data berdasarkan id
 mysqli_query($koneksi, "DELETE FROM prodi WHERE id = $id");
+mysqli_query($koneksi, "DELETE FROM mahasiswa WHERE id_prodi = $id");
 
 if (mysqli_affected_rows($koneksi) > 0) {
     echo "

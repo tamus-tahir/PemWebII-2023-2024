@@ -32,6 +32,7 @@ while ($data = mysqli_fetch_assoc($result)) {
         <tr>
             <th>No</th>
             <th>Prodi</th>
+            <th>Aksi</th>
         </tr>
     </thead>
     <tbody>
@@ -41,6 +42,10 @@ while ($data = mysqli_fetch_assoc($result)) {
             <tr>
                 <td><?= $i++; ?></td>
                 <td><?= $row['prodi']; ?></td>
+                <td>
+                    <a href="ubah.php?id=<?= $row['id']; ?>">Ubah</a> ||
+                    <a href="hapus.php?id=<?= $row['id']; ?>" onclick="return confirm('Anda Yakin? Data Akan Dihapus!')">Hapus</a>
+                </td>
             </tr>
         <?php endforeach ?>
 

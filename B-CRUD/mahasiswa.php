@@ -7,7 +7,7 @@ global $koneksi;
     prodi.id => tabel prodi filed id
     mahasiswa.id_prodi => tabel mahasiswa filed id_prodi
 */
-$result = mysqli_query($koneksi, "SELECT * FROM mahasiswa JOIN prodi ON prodi.id = mahasiswa.id_prodi ORDER BY mahasiswa.id DESC");
+$result = mysqli_query($koneksi, "SELECT *, mahasiswa.id FROM mahasiswa JOIN prodi ON prodi.id = mahasiswa.id_prodi ORDER BY mahasiswa.id DESC");
 
 $mahasiswa = [];
 while ($data = mysqli_fetch_assoc($result)) {
@@ -31,6 +31,7 @@ while ($data = mysqli_fetch_assoc($result)) {
             <th>NIM</th>
             <th>Prodi</th>
             <th>Jenis Kelamin</th>
+            <th>Hobi</th>
             <th>Deskripsi</th>
             <th>Aksi</th>
         </tr>
@@ -45,6 +46,7 @@ while ($data = mysqli_fetch_assoc($result)) {
                 <td><?= $row['nim']; ?></td>
                 <td><?= $row['prodi']; ?></td>
                 <td><?= $row['gender'] == 1 ? 'Laki-Laki' : 'Perempuan'; ?></td>
+                <td><?= $row['hobi']; ?></td>
                 <td><?= $row['deskripsi']; ?></td>
                 <td>
                     <a href="ubah_mahasiswa.php?id=<?= $row['id']; ?>">Ubah</a> ||

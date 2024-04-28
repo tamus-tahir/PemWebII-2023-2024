@@ -11,6 +11,10 @@ while ($data = mysqli_fetch_assoc($result)) {
 }
 
 if (isset($_POST['submit'])) {
+    $hobi = $_POST['hobi'];
+
+    // implode => mengubah array menjadi string
+    $hobi = implode(", ", $hobi);
     $nama = $_POST['nama'];
     $nim = $_POST['nim'];
     $id_prodi = $_POST['id_prodi'];
@@ -18,7 +22,7 @@ if (isset($_POST['submit'])) {
     $deskripsi = $_POST['deskripsi'];
 
     // sesuai urutan di database (id, id_prodi, nama, nim, gender, deskripsi)
-    $query = "INSERT INTO mahasiswa VALUES ('', '$id_prodi', '$nama' , '$nim', '$gender', '$deskripsi')";
+    $query = "INSERT INTO mahasiswa VALUES ('', '$id_prodi', '$nama' , '$nim', '$gender', '$deskripsi', '$hobi')";
 
     mysqli_query($koneksi, $query);
 
@@ -61,6 +65,14 @@ if (isset($_POST['submit'])) {
     <label for="">Laki-Laki</label>
     <input type="radio" name="gender" value="0">
     <label for="">Perempuan</label>
+
+    <br><br>
+
+    <p>Pilih Hobi</p>
+    <input type="checkbox" name="hobi[]" value="Game"> Game
+    <input type="checkbox" name="hobi[]" value="Nonton"> Nonton
+    <input type="checkbox" name="hobi[]" value="Musik"> Musik
+    <input type="checkbox" name="hobi[]" value="Olahraga"> Olahraga
 
     <br><br>
 

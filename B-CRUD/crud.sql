@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2024 at 07:34 PM
+-- Generation Time: Apr 26, 2024 at 08:57 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -33,15 +33,16 @@ CREATE TABLE `mahasiswa` (
   `nama` varchar(128) NOT NULL,
   `nim` int(11) NOT NULL,
   `gender` int(11) NOT NULL,
-  `deskripsi` varchar(255) NOT NULL
+  `deskripsi` varchar(255) NOT NULL,
+  `hobi` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mahasiswa`
 --
 
-INSERT INTO `mahasiswa` (`id`, `id_prodi`, `nama`, `nim`, `gender`, `deskripsi`) VALUES
-(2, 3, 'Indah', 20220202, 0, 'kbdiwbdv oubwsuodvbwuov oubuosvd');
+INSERT INTO `mahasiswa` (`id`, `id_prodi`, `nama`, `nim`, `gender`, `deskripsi`, `hobi`) VALUES
+(2, 3, 'Indah', 20220202, 0, 'kbdiwbdv oubwsuodvbwuov oubuosvd', 'Game, Musik');
 
 -- --------------------------------------------------------
 
@@ -60,7 +61,6 @@ CREATE TABLE `prodi` (
 
 INSERT INTO `prodi` (`id`, `prodi`) VALUES
 (1, 'Sistem Informasi'),
-(2, 'Teknik Informatika'),
 (3, 'Bisnis Digital'),
 (4, 'Teknologi Informasi'),
 (5, 'Pendidikan Teknologi Informasi');
@@ -89,7 +89,7 @@ ALTER TABLE `prodi`
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `prodi`
